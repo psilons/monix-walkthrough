@@ -2,8 +2,10 @@ package org.mytest.monix.walkthrough
 
 import monix.eval.Task
 import monix.execution.Scheduler
-
 import org.mytest.monix.walkthrough.SimpleFunc.countPrimes
+
+import scala.concurrent.Await
+import scala.concurrent.duration.Duration
 
 object SimpleTaskTest extends App {
     val task = Task[Int] {
@@ -18,15 +20,13 @@ object SimpleTaskTest extends App {
     println(res.value) // Some(Success(78498))
 
     // 2nd way, with error handling, it's a callback
-    val cancelable = task.runAsync { result =>
-      result match {
+    val cancelable = task.runAsync {
         case Right(value) => println(value) // 78498
         case Left(ex) => println(s"Exception: ${ex.getMessage}")
-      }
     }
 
-    // 3rd way - https://monix.io/docs/current/tutorials/parallelism.html
     val tasks = (10000 until 11000).map(i => Task(countPrimes(i)))// 100 tasks
+    // 3rd way - https://monix.io/docs/current/tutorials/parallelism.html
     val aggr = Task.parSequence(tasks).map(_.toList) // This is ordered
     aggr.foreach(println)
 
@@ -35,7 +35,26 @@ object SimpleTaskTest extends App {
     aggr1.foreach(println)
 
     // 5th way - windowed
-    val batches = tasks.sliding(100, 100).map(batch => Task.parSequence(batch)).toIndexedSeq
+    val batches = tasks.sliding(100, 100).map(batch => Task.parSequence(batch)).toIterable
     val aggr2 = Task.sequence(batches).map(_.flatten.toList)
-    aggr2.runToFuture.foreach(println) // not working in Scala3
+
+    val fu = aggr2.runToFuture
+    Await.result(fu, Duration.Inf) // or Thread.sleep(2000) // have to sleep to see the result
+    println("-" * 80)
+    fu.foreach(println) // still not solid
+
+    // ok, try one more time, this is better - remove daemon in global scheduler
+    import monix.execution.Scheduler
+
+    implicit val scheduler1 = Scheduler.forkJoin(
+      name="my-forkjoin",
+      parallelism=4,
+      maxThreads=128,
+      daemonic=false
+    )
+    println("-" * 80)
+    val fu1 = aggr2.runToFuture
+    fu1.foreach(println)
+
+    scheduler1.shutdown()
 }

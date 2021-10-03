@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ScalaCompilerConfiguration">
     <profile name="sbt 1" modules="monix-test_8532" />
-    <profile name="sbt 2" modules="monix-walkthrough">
+    <profile name="sbt 2" modules="monix-test,monix-walkthrough">
       <option name="deprecationWarnings" value="true" />
       <option name="featureWarnings" value="true" />
     </profile>

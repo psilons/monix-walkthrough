@@ -2,6 +2,8 @@ package org.mytest.monix.walkthrough
 
 object SimpleFunc
 {
+    // count prime numbers < num for given num
+    // used for testing parallel
     def countPrimes(num: Int): Int = num match {
         case n if n < 1 => throw new Exception("nums should be > 0")
         case n if n <= 2 => 0 // there is no prime for < 2

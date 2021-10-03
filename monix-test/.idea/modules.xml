@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/monix-walkthrough.iml" filepath="$PROJECT_DIR$/.idea/modules/monix-walkthrough.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/monix-walkthrough-build.iml" filepath="$PROJECT_DIR$/.idea/modules/monix-walkthrough-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/monix-test.iml" filepath="$PROJECT_DIR$/.idea/modules/monix-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/monix-test-build.iml" filepath="$PROJECT_DIR$/.idea/modules/monix-test-build.iml" />
     </modules>
   </component>
 </project>

@@ -7,3 +7,9 @@
 /monix-test/target
 /monix-test/project/target
 /monix-test/project/project/target
+/spark-test/target
+/spark-test/project/target
+/spark-test/project/project/target
+/scala-graph-test/target
+/scala-graph-test/project/target
+/scala-graph-test/project/project/target

@@ -3,7 +3,7 @@ package org.mytest.monix.walkthrough
 import monix.eval.Task
 import monix.execution.{CancelableFuture, Scheduler}
 
-import scala.concurrent.duration.*
+import scala.concurrent.duration._
 
 // https://monix.io/docs/current/eval/task.html
 object TaskErrorHandlingTest extends App

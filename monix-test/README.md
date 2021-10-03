@@ -1,9 +1,22 @@
 # Monix Walkthrough
 
-The APIs are confusing, not well designed - doing simple tasks in a complex way.
-Not sure whether Scala3 causes problems.
+## Objectives
+To find a tool similar to JDK concurrency, which can run tasks in parallel with
+multi-threading in one JVM.
+- Given a list of tasks, run them, and collect results back, as fast as possible.
+- These tasks are business logic, and shouldn't mix with the multi-threading
+  code. We may run in one thread, multi-thread, or in distributed clusters.
+
+There maybe many ways to do this, we want to figure out the best way.
+- minimal coding: dispatch, run, collect.
+- cancellable, to prevent hanging.
+- timeout, to restrict maximum run time.
+- number of threads can be used.
+- bring back errors if any
 
 ## Set up
+Though monix can go up to Scala3, we still use 2.12 for testing since Spark is 
+at most 2.12 and we want to use them together.
 
 We use Scala 3, so go to https://mvnrepository.com/artifact/org.scala-lang/scala3-library
 to find the latest version.
