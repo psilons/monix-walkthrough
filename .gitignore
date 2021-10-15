@@ -14,3 +14,8 @@
 /scala-graph-test/project/target
 /scala-graph-test/project/project/target
 /spark-test/dataset
+/config-test/target
+/config-test/project/target
+/config-test/*
+/monix-test/.idea
+/spark-test/.idea
