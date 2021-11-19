@@ -14,12 +14,23 @@ There maybe many ways to do this, we want to figure out the best way.
 - number of threads can be used.
 - bring back errors if any
 
+There are 2 main classes, Task and Observable. Task is similar to Runnable or Callable. 
+
+## Different thought
+
+Seem Monix targets reactive without blocking. The multi-threading nature intervenes
+with business logic.
+
+Need to go over classic multi-threading scenarios
+- dining philosophers
+- producer-consumers
+- readers-writers
+
+Plus, deal with deadlocks, livelocks and fairness together.
+
 ## Set up
 Though monix can go up to Scala3, we still use 2.12 for testing since Spark is 
-at most 2.12 and we want to use them together.
-
-We use Scala 3, so go to https://mvnrepository.com/artifact/org.scala-lang/scala3-library
-to find the latest version.
+at most 2.12, and we want to use them together.
 
 Go to https://monix.io/ to find latest version.
 
@@ -30,8 +41,9 @@ are there.
 
 A high level introduction: https://www.baeldung.com/scala/monix
 
-https://scalac.io/blog/monix-why-you-should-care-about/
+- https://scalac.io/blog/monix-why-you-should-care-about/
 
-https://blog.softwaremill.com/scalaz-8-io-vs-akka-typed-actors-vs-monix-part-1-5672657169e1
+- https://blog.softwaremill.com/scalaz-8-io-vs-akka-typed-actors-vs-monix-part-1-5672657169e1
 
-https://monix.io/docs/current/tutorials/parallelism.html
+- Observable: https://stackoverflow.com/questions/60245188/stop-all-async-task-when-they-fails-over-threshold
+- Parallel and observable: https://monix.io/docs/current/tutorials/parallelism.html

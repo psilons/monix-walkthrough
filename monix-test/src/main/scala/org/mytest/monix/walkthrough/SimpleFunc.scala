@@ -21,4 +21,13 @@ object SimpleFunc
             }
             primeFlags.sum
     }
+
+    def debug(msg: String): Unit = // print out the thread info
+    {
+        val now = java.time.format.DateTimeFormatter.ISO_INSTANT
+            .format(java.time.Instant.now)
+            .substring(11, 23)
+        val thread = Thread.currentThread.getName
+        println(s"$now [$thread] $msg")
+    }
 }
