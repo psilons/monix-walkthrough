@@ -12,11 +12,14 @@ with self contained content.
 https://awesomeopensource.com/project/lauris/awesome-scala
 Notably, Apache Spark and Flink
 
-
-- https://www.innoq.com/en/blog/functional-service-in-scala/
+- http://typelevel.org/projects/
+- https://github.com/scalanlp/breeze
 - https://github.com/tofu-tf/tofu
 
-## Dependency Injection
+- https://www.innoq.com/en/blog/functional-service-in-scala/
+
+
+### Dependency Injection
 
 Don't have time to go on. May just use Spring at the boundary and use Scala inside the domain.
 Use Spring components if Scala version is not mature.

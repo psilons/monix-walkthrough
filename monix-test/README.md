@@ -47,3 +47,18 @@ A high level introduction: https://www.baeldung.com/scala/monix
 
 - Observable: https://stackoverflow.com/questions/60245188/stop-all-async-task-when-they-fails-over-threshold
 - Parallel and observable: https://monix.io/docs/current/tutorials/parallelism.html
+
+https://stackoverflow.com/questions/60245188/stop-all-async-task-when-they-fails-over-threshold
+
+https://stackoverflow.com/questions/47382989/how-to-handle-unhandled-exception-throw-in-monix-onerrorhandle
+
+https://stackoverflow.com/questions/55614149/better-way-to-handle-errors-with-monix-observable
+
+https://stackoverflow.com/questions/58470766/monix-task-handle-failure-for-list-of-futures
+
+Task.defer {
+for (
+a <- Task.eval
+} yield {
+
+}

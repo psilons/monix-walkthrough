@@ -116,3 +116,6 @@ The job console is http://localhost:4040/jobs/
 - https://kontext.tech/column/hadoop/377/latest-hadoop-321-installation-on-windows-10-step-by-step-guide
 
 - https://onlineguwahati.com/installation-of-apache-hadoop-3-2-0/
+
+- http://people.csail.mit.edu/matei/papers/2010/hotcloud_spark.pdf
+- *** http://training.databricks.com/visualapi.pdf

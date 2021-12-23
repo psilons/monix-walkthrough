@@ -22,6 +22,7 @@ object DataFrameTest extends App
     df.select("Name", "HP").show(10) // slicing
 
     df.filter(df("Total") > 600).show(10) // filtering
+    df.filter(df("Legendary")).show()
 
     df.groupBy("Type 1").count().show() // groupby
 
@@ -30,7 +31,6 @@ object DataFrameTest extends App
     // run sql
     df.createOrReplaceTempView("pokemons")
     session.sqlContext.sql("select Name, \"Type 1\", \"Type 2\", Total from pokemons").show(5)
-
 
     session.close()
 }
