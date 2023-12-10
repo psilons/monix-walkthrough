@@ -119,3 +119,5 @@ The job console is http://localhost:4040/jobs/
 
 - http://people.csail.mit.edu/matei/papers/2010/hotcloud_spark.pdf
 - *** http://training.databricks.com/visualapi.pdf
+
+- https://towardsdatascience.com/introduction-to-apache-spark-with-scala-ed31d8300fe4
